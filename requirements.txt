@@ -1,0 +1,4 @@
+streamlit
+hydralit_components
+pandas
+sqlite3
