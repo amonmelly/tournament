@@ -11,12 +11,9 @@ def connection():
 
 
 st.title('Pool Tournament')
-menu_data=[{'label':'Members'},{'label':'Fixtures'},{'label':'Table'},{'label':'Update Fixture'}]
+menu_data=[{'label':'Fixtures'},{'label':'Table'},{'label':'Update Fixture'}]
 menu_id=hc.nav_bar(menu_definition=menu_data)
-if menu_id=='Members':
-	st.info('Comming Soon')
-    
-elif menu_id=='Fixtures':
+if menu_id=='Fixtures':
     conn = connection()
     query = """
     SELECT games.game_id,players.name,player_2.player_name,games.status,games.round
