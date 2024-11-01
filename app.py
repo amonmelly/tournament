@@ -48,7 +48,7 @@ elif menu_id == 'Update Fixture':
     fixtures = f[(f['Player 1']==player_filter) | (f['Player 2']==player_filter)]
     
     fixture = st.selectbox('Select Fixture',list(fixtures['fixtures']))
-    winner = st.radio('Winner%s',fixture.split(' vs '), horizontal=True)
+    winner = st.radio('Winner?',fixture.split(' vs '), horizontal=True)
     looser_score = st.number_input('Looser Score:', min_value=0, max_value=1)
     if looser_score == 0:
         l_score = -2
