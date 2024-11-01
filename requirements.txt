@@ -1,4 +1,5 @@
 streamlit
+urllib3
 psycopg2
 hydralit_components==1.0.10
 numpy==1.26.4
