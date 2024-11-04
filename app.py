@@ -132,11 +132,15 @@ elif menu_id == 'Payment':
     if option == 'Update Payment':
         df1 = df[df['payment_status']!='Paid']
         name = st.selectbox('Player',list(df1['name']))
+        password = st.text_input('Password')
         if st.button('Update Payment'):
-            cursor.execute(update_payment, ("Paid", name))
-            conn.commit()
-            conn.close()
-            st.success('Payment Updated Successfully')
+            if password == '@123':
+                cursor.execute(update_payment, ("Paid", name))
+                conn.commit()
+                conn.close()
+                st.success('Payment Updated Successfully')
+            else:
+                st.error('Unauthorized Update')
     else:
         names = list(df['name'])
         payment = list(df['payment_status'])
